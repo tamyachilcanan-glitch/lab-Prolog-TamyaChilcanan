@@ -71,7 +71,11 @@ must_be_cooked(bread).
 must_be_cooked(salmon).
 
 %% step 2: Reglas de clasificación
-is_plant_based(X) :- vegan(X), \+ is_dairy(X).
+
+    %% X es plant_based (basado en plantas) si X es vegano y no es lácteo.
+is_plant_based(X) :- vegan(X), \+ is_dairy(X).   %% operador negacion (/+)
+
+    %% X es de origen animal si es un lácteo, o si es pollo, o si es salmón.
 is_animal_based(X) :- is_dairy(X) ; X = chicken ; X = salmon.
 
 can_eat_raw(X) :- eaten_raw(X).
@@ -163,19 +167,9 @@ is_ancestor(A, C) :- ancestor(A, B), is_ancestor(B, C).
 % ?- is_ancestor(food, banana).    % true
 
 
-%% ============================================
-%% 6. DELIVERABLES
-%% ============================================
 
-% Este archivo .pl incluye:
-% - Hechos para al menos 10 comidas (step 1)
-% - Reglas de clasificación (step 2)
-% - Un procedimiento interactivo (identify_food/1, step 4a)
-% - Manejo de ambigüedad con possible_foods/1 (step 4b)
-% - Regla recursiva tipo “ancestor” (step 5)
-% - Ejemplos de consultas y sus resultados
-
-% Ejemplo de uso en la práctica:
+%% Ejemplo de uso en la práctica:
+%% ===============================
 
 % ?- is_fruit(banana).
 % true.
