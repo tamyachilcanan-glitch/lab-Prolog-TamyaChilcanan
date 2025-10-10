@@ -88,7 +88,6 @@ connected(X, Y) :- door(X, Y).
 connected(X, Y) :- door(Y, X).
 
 % Envoltorio: inicializa visitados con X
-% path usando connected/2
 path(X, Y, Path) :-
     path(X, Y, [X], Path).
 
@@ -108,7 +107,6 @@ path(X, Y, Visited, [X | Rest]) :-
 print_path(X, Y) :-
     path(X, Y, P),
     writeln(P).
-
 
 % Encontrar todos los caminos posibles de X a Y
 
