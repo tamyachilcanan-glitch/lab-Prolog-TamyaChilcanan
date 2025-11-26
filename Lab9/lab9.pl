@@ -47,13 +47,13 @@ verb --> [eats] | [sees] | [likes] | [chases].
 % 4. DEMOSTRACIONES DE PARSING
 %========================================
 
-parse_example1 :-
+example1 :-
     phrase(sentence, [the, hungry, cat, eats, the, tiny, mouse]).
 
-parse_example2 :-
+example2 :-
     phrase(sentence, [a, small, bird, sees, a, big, dog]).
 
-parse_example3 :-
+example3 :-
     phrase(sentence, [some, happy, rabbits, like, the, green, grass]).
 
 %========================================
